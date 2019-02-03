@@ -10,7 +10,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - C:/docker/mongo:/var/lib/mysql
+      - mysql1:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: strapi
@@ -20,3 +20,6 @@ services:
     restart: always
     ports:
       - 9090:8080
+
+volumes:
+  mysql1:
