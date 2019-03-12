@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  minio:
+    image: minio/minio:latest
+    volumes:
+      - type: bind
+        source: c:/docker/data
+        target: /export
+    ports:
+      - "9900:9000"
+    environment:
+      MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
+      MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    command: server /export

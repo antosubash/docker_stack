@@ -23,3 +23,7 @@
 ## deploy mongodb stack
 
 `docker stack deploy --compose-file=mongo_stack.yml mongo`
+
+## docker see the services
+
+`docker service ls`
