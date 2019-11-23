@@ -12,6 +12,10 @@
 
 `docker volume create mysql1`
 
+## Postgres Volume
+
+`docker volume create postgres`
+
 ## Mongo Volume
 
 `docker volume create mongo1`
@@ -23,6 +27,10 @@
 ## deploy mongodb stack
 
 `docker stack deploy --compose-file=mongo_stack.yml mongo`
+
+## deploy postgres stack
+
+`docker stack deploy --compose-file=postgres_stack.yml postgres`
 
 ## docker see the services
 
