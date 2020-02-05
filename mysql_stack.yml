@@ -1,25 +1,16 @@
-# Use root/example as user/password credentials
 version: '3.1'
 
 services:
-
-  db:
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    ports:
-      - 3306:3306
-    volumes:
-      - mysql1:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: strapi
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 9090:8080
+   db:
+     image: mysql:5.7
+     volumes:
+       - mysql1:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: mysql
+       MYSQL_DATABASE: mysql
+       MYSQL_USER: mysql
+       MYSQL_PASSWORD: mysql
 
 volumes:
   mysql1:

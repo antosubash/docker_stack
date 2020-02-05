@@ -21,7 +21,7 @@ services:
 
   portainer:
     image: portainer/portainer
-    command: -H tcp://tasks.agent:9001 --tlsskipverify --admin-password='anto'
+    command: -H tcp://tasks.agent:9001 --tlsskipverify --admin-password='$$2y$$05$$.3UNUxwAEylUwN1EGnCBgeF.AQDEA4joors.2qAyGe6dmXf0q0ta2'
     ports:
       - "9000:9000"
     volumes:
