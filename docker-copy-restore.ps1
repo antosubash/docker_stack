@@ -1,4 +1,4 @@
-$dockerContainerId = docker ps --filter "ancestor=mdillon/postgis:latest" --format "{{.ID}}"
+$dockerContainerId = docker ps --filter "name=postgres_db" --format "{{.ID}}"
 
 Write-Output $dockerContainerId
 

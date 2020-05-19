@@ -4,8 +4,7 @@ services:
    db:
      image: mysql:5.7
      volumes:
-       - mysql1:/var/lib/mysql
-     restart: always
+       - mysql:/var/lib/mysql
      environment:
        MYSQL_ROOT_PASSWORD: mysql
        MYSQL_DATABASE: mysql
@@ -13,4 +12,4 @@ services:
        MYSQL_PASSWORD: mysql
 
 volumes:
-  mysql1:
+  mysql:
