@@ -8,6 +8,8 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
     configs:
       - source: elastic_config
         target: /usr/share/elasticsearch/config/elasticsearch.yml
@@ -64,6 +66,10 @@ configs:
     file: ./logstash/logstash.conf
   kibana_config:
     file: ./kibana/kibana.yml
+
+volumes:
+    esdata:
+        external: true
 
 networks:
   elk:
