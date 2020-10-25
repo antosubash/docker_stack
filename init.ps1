@@ -2,12 +2,9 @@ Write-Output "Swarm Init"
 docker swarm init
 
 Write-Output "Creating volumes"
-docker volume create mysql
+$stacks = @('portainer','mysql','mongo','postgres-data','esdata', 'redis')
 
-docker volume create postgres
-
-docker volume create mongo
-
-docker volume create esdata
-
-docker volume create redis
+foreach ($i in $stacks) {
+    Write-Output "Creating volume $i"
+    docker volume create $i
+}

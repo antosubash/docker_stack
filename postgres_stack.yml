@@ -2,19 +2,20 @@ version: "3.2"
 
 services:
   db:
-    image: mdillon/postgis
+    image: kartoza/postgis:12.0
     ports:
       - 5432:5432
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - D:\docker\data\postgres:/var/lib/postgresql
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: natura_alert_v2
+      POSTGRES_USER: postgres
+      POSTGRES_PASS: postgres
+      --auth: "md5"
+      POSTGRES_MULTIPLE_EXTENSIONS: postgis,hstore,postgis_topology
 
   adminer:
     image: adminer
     ports:
       - 8001:8080
 
-volumes:
-  postgres:
-    external: true

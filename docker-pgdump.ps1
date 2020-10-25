@@ -9,4 +9,4 @@ if (Test-Path $FileName)
 }
 
 
-docker exec -t $dockerContainerId pg_dumpall -c -U postgres > $FileName
+docker exec -t $dockerContainerId pg_dumpall -h localhost -U postgres > $FileName

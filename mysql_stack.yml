@@ -13,3 +13,4 @@ services:
 
 volumes:
   mysql:
+    external: true

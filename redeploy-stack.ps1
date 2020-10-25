@@ -7,7 +7,7 @@ $stack = $args[0]
 Write-Output "Removing $i stack"
 docker stack rm $stack
 
-Start-Sleep -s 5
+Start-Sleep -s 10
 
 # Perform iteration to remove and deploy them
 docker stack deploy --compose-file="$($stack)_stack.yml" $stack
