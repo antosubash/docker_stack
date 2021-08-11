@@ -1,15 +1,16 @@
-version: '3.2'
+version: "3.2"
 
 services:
   minio:
     image: minio/minio:latest
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
     volumes:
       - type: bind
         source: c:/docker/data
         target: /export
     ports:
       - "9900:9000"
-    environment:
-      MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
-      MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-    command: server /export
+      - "9001:9001"
+    command: server /export --console-address ":9001" --address 127.0.0.1:9000
