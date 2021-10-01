@@ -4,9 +4,9 @@ services:
   db:
     image: kartoza/postgis:12.0
     ports:
-      - 2345:5432
+      - 5432:5432
     volumes:
-      - C:\docker\postgres_demo:/var/lib/postgresql
+      - C:\docker\postgres_new:/var/lib/postgresql
     environment:
       POSTGRES_DB: test
       POSTGRES_USER: postgres
@@ -17,5 +17,5 @@ services:
   adminer:
     image: adminer
     ports:
-      - 8002:8080
+      - 8001:8080
 
