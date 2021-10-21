@@ -6,7 +6,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - C:\docker\postgres_new:/var/lib/postgresql
+      - C:\docker\postgres:/var/lib/postgresql
     environment:
       POSTGRES_DB: test
       POSTGRES_USER: postgres
@@ -18,4 +18,3 @@ services:
     image: adminer
     ports:
       - 8001:8080
-
