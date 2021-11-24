@@ -1,5 +1,5 @@
 version: "3"
-
+  
 services:
   redis-master:
     image: "bitnami/redis:latest"
