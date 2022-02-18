@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  baget:
+    image: loicsharma/baget
+    ports:
+      - "5555:80"
+    volumes:
+      - C:\docker\nuget:/var/baget
+    environment:
+      ApiKey: "password"
+      Storage__Type: FileSystem
+      Storage__Path: /var/baget/packages
+      Database__Type: Sqlite
+      Database__ConnectionString: "Data Source=/var/baget/baget.db"
+      Search__Type: Database
