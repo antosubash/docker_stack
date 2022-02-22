@@ -1,0 +1,14 @@
+version: "3.2"
+
+services:
+  vault:
+    image: vault
+    ports:
+      - 8200:8200
+    volumes:
+      - C:\docker\vault:/data
+    environment:
+      - VAULT_ADDR=http://127.0.0.1:8200
+      - VAULT_DEV_ROOT_TOKEN_ID=secret
+    cap_add:
+      - IPC_LOCK
