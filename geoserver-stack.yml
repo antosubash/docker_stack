@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+   geoserver:
+      image: kartoza/geoserver
+      volumes:
+        - C:\docker\geoserver:/opt/geoserver/data_dir
+      ports:
+        - 9090:8080
+      restart: on-failure
+      environment:
+        - GEOSERVER_ADMIN_PASSWORD=admin
+        - GEOSERVER_ADMIN_USER=admin
