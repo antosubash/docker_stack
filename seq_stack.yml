@@ -7,6 +7,6 @@ services:
       - 8003:80
       - 5341:5341
     volumes:
-      - D:\docker\data\seq:/data
+      - C:\docker\seq:/data
     environment:
       ACCEPT_EULA: "Y"
