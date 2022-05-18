@@ -6,7 +6,7 @@ services:
     ports:
       - "5555:80"
     volumes:
-      - C:\docker\nuget:/var/baget
+      - C:\docker\data\nuget:/var/baget
     environment:
       ApiKey: "password"
       Storage__Type: FileSystem

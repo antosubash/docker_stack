@@ -10,10 +10,5 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
 #      - REDIS_PASSWORD=my_master_password
     volumes:
-      - "redis:/bitnami"
+      - C:\docker\data\redis:/bitnami
 
-
-
-volumes:
-  redis:
-    external: true

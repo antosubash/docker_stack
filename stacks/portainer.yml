@@ -25,7 +25,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - portainer:/data
+      - C:\docker\data\portainer:/data
     networks:
       - agent_network
     deploy:
@@ -39,6 +39,3 @@ networks:
     driver: overlay
     attachable: true
 
-volumes:
-  portainer:
-    external: true

@@ -1,16 +1,12 @@
 version: '3.1'
 
 services:
-   db:
+   mysql:
      image: mysql:5.7
      volumes:
-       - mysql:/var/lib/mysql
+       - C:\docker\data\mysql:/var/lib/mysql
      environment:
        MYSQL_ROOT_PASSWORD: mysql
        MYSQL_DATABASE: mysql
        MYSQL_USER: mysql
        MYSQL_PASSWORD: mysql
-
-volumes:
-  mysql:
-    external: true
