@@ -1,8 +1,5 @@
 Write-Output "Delete volumes"
-
-
-$stacks = @('portainer','mysql','mongo','postgres-data','esdata', 'redis')
-
+. .\common.ps1
 # Perform iteration to remove and deploy them
 foreach ($i in $stacks) {
     Write-Output "Removing volume $i"
