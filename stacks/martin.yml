@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  martin:
+    image: maplibre/martin:v0.7.0
+    ports:
+      - "9000:3000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@host.docker.internal/gis_data

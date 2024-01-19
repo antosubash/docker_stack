@@ -9,7 +9,7 @@ foreach ($i in $stacks) {
     $isStackRunning = docker stack ls | Out-String -Stream | Select-String -Pattern $i
     if ($isStackRunning) {
         Write-Output "Stack $i is running"
-        # docker stack rm $i
+        docker stack rm $i
     } else {
         Write-Output "Stack $i is not running"
         Write-Output "Starting stack $i"
