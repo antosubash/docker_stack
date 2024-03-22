@@ -2,13 +2,11 @@ version: "3"
   
 services:
   redis-master:
-    image: "bitnami/redis:latest"
+    image: docker.io/bitnami/redis:7.2
     ports:
-      - "6379:6379"
+      - 6379:6379
     environment:
-      - REDIS_REPLICATION_MODE=master
       - ALLOW_EMPTY_PASSWORD=yes
-#      - REDIS_PASSWORD=my_master_password
     volumes:
       - C:\docker\data\redis:/bitnami
 
