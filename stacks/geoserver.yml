@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
    geoserver:
-      image: kartoza/geoserver:2.20.4
+      image: kartoza/geoserver:2.25.2
       volumes:
         - C:\docker\data\geoserver:/opt/geoserver/data_dir
       ports:
