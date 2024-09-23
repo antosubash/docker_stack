@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   db:
-    image: kartoza/postgis:12.0
+    image: postgis/postgis
     ports:
       - 5432:5432
     volumes:
@@ -10,11 +10,20 @@ services:
     environment:
       POSTGRES_DB: test
       POSTGRES_USER: postgres
-      POSTGRES_PASS: postgres
+      POSTGRES_PASSWORD: postgres
       --auth: "md5"
       POSTGRES_MULTIPLE_EXTENSIONS: postgis,hstore,postgis_topology
 
   adminer:
-    image: adminer
+    image: wodby/adminer
     ports:
-      - 8001:8080
+      - 8001:9000
+    environment:
+      ADMINER_DEFAULT_DB_DRIVER : pgsql
+      ADMINER_DEFAULT_DB_HOST : db
+      ADMINER_DEFAULT_DB_NAME : test
+      ADMINER_DEFAULT_DB_USERNAME : postgres
+      ADMINER_DEFAULT_DB_PASSWORD : postgres
+      PHP_POST_MAX_SIZE : 900M
+      PHP_UPLOAD_MAX_FILESIZE : 900M
+      PHP_CLI_MEMORY_LIMIT : 900M
