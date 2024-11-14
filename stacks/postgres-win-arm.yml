@@ -1,0 +1,28 @@
+version: "3.2"
+
+services:
+  db:
+    image: kartoza/postgis:17-3.5
+    volumes:
+      - C:\docker\data\postgres:/opt/postgres/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_USER: postgres
+      POSTGRES_PASS: postgres
+      DATADIR: /opt/postgres/data
+
+  adminer:
+    image: wodby/adminer
+    ports:
+      - 8001:9000
+    environment:
+      ADMINER_DEFAULT_DB_DRIVER : pgsql
+      ADMINER_DEFAULT_DB_HOST : db
+      ADMINER_DEFAULT_DB_NAME : test
+      ADMINER_DEFAULT_DB_USERNAME : postgres
+      ADMINER_DEFAULT_DB_PASSWORD : postgres
+      PHP_POST_MAX_SIZE : 900M
+      PHP_UPLOAD_MAX_FILESIZE : 900M
+      PHP_CLI_MEMORY_LIMIT : 900M
