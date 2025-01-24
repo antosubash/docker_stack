@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   db:
-    image: postgis/postgis
+    image: kartoza/postgis:17-3.5
     ports:
       - 5432:5432
     volumes:
@@ -24,6 +24,8 @@ services:
       ADMINER_DEFAULT_DB_NAME : test
       ADMINER_DEFAULT_DB_USERNAME : postgres
       ADMINER_DEFAULT_DB_PASSWORD : postgres
+      ADMINER_DESIGN : nette
+      ADMINER_PLUGINS: tables-filter tinymce
       PHP_POST_MAX_SIZE : 900M
       PHP_UPLOAD_MAX_FILESIZE : 900M
       PHP_CLI_MEMORY_LIMIT : 900M
